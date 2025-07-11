@@ -1,33 +1,36 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+//App.jsx
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+
+import Loading from './view-pages/Loading';
+import Home from './view-pages/HomePage';
+import Login from './view-pages/Login';
+import SignIn from './view-pages/SignIn';
+
+// import ForgotPassword from './view-pages/ForgotPassword';
+// import ResetPassword from './view-pages/ResetPassword';
+// import VerifyEmail from './view-pages/VerifyEmail';
+// import VerifyPhone from './view-pages/VerifyPhone';
+// import VerifyOTP from './view-pages/VerifyOTP';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path="/" element={<Loading />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
+        {/* <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/verify-phone" element={<VerifyPhone />} />
+        <Route path="/verify-otp" element={<VerifyOTP />} /> */}
+      </Routes>
+      {/* <ToastContainer /> */}
     </>
   );
 }
