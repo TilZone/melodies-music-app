@@ -1,10 +1,12 @@
+//App.jsx
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
 import Loading from './view-pages/Loading';
-import Home from './view-pages/Home';
+import Home from './view-pages/HomePage';
 import Login from './view-pages/Login';
 import SignIn from './view-pages/SignIn';
 
